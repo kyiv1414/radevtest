@@ -17,15 +17,17 @@
 </head>
 
 <body>
+<br>
 <div class="container">
     <h1 class="display-one">ra-dev-test</h1>
     <a class="btn btn-dark" href="{{ URL::to('schools/create') }}">create school</a>
     <a class="btn btn-dark" href="{{ URL::to('schools') }}">schools list</a>
     <a class="btn btn-dark" href="{{ URL::to('staff/create') }}">create staff</a>
     <a class="btn btn-dark" href="{{ URL::to('staff') }}">staff list</a>
+    <a class="btn btn-dark" href="{{ URL::to('logout') }}">logout</a>
+    <a class="btn btn-dark" href="{{ URL::to('registration') }}">register</a>
 </div>
-
-
+<br>
 
 @yield('content')
 

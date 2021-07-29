@@ -3,9 +3,9 @@
 @section('content')
 
     <div class="container">
-        <h2>Create staff</h2>
         <div class="row">
             <div class="col-12 pt-2">
+                <h2>Create staff page</h2>
                 {{ Form::open(array('url' => 'staff')) }}
 
                 <div class="form-group">

@@ -37,7 +37,7 @@ class SchoolController extends Controller
             'name'       => 'required',
             'email'      => 'required|email',
             'website' => 'required',
-            'image' => 'required',
+            'image' => 'dimensions:min_width=150,min_height=150',
         );
         $validator = Validator::make(Request::all(), $rules);
 

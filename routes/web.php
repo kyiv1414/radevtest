@@ -13,22 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::redirect('/', '/schools', 301)->middleware('auth');
 
 
-//Route::get('/schools', [\App\Http\Controllers\SchoolController::class, 'index']);
+Route::resource('schools', 'SchoolController')->middleware('auth');
 
-//Route::get('/schools/create', [\App\Http\Controllers\SchoolController::class, 'create']);
-//Route::post('/schools/create', [\App\Http\Controllers\SchoolController::class, 'store']);
-//Route::get('/schools/{school}', [\App\Http\Controllers\SchoolController::class, 'show']);
+Route::resource('staff', 'StaffController')->middleware('auth');
 
-//Route::get('/schools/{school}/edit', [\App\Http\Controllers\SchoolController::class, 'edit']);
-//Route::put('/schools/{school}/edit', [\App\Http\Controllers\SchoolController::class, 'update']);
-
-//Route::delete('/schools/{school}', [\App\Http\Controllers\SchoolController::class, 'destroy']);
-
-Route::resource('schools', 'SchoolController');
-
-Route::resource('staff', 'StaffController');
+Route::get('login', [\App\Http\Controllers\AuthController::class, 'index'])->name('login');
+Route::post('post-login', [\App\Http\Controllers\AuthController::class, 'postLogin'])->name('login.post');
+Route::get('registration', [\App\Http\Controllers\AuthController::class, 'registration'])->name('register');
+Route::post('post-registration', [\App\Http\Controllers\AuthController::class, 'postRegistration'])->name('register.post');
+Route::get('logout', [\App\Http\Controllers\AuthController::class, 'logout'])->name('logout');

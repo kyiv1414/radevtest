@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <p>index staff page</p>
+                        <h2>Index Staff Page</h2>
                         <p>list:</p>
                     </div>
 
@@ -18,6 +18,7 @@
                 @empty
                     <p class="text-warning">No staff</p>
                 @endforelse
+                {{ $staff->links() }}
             </div>
         </div>
     </div>

@@ -6,7 +6,7 @@
                 <div class="row">
                     <div class="col-12">
 
-                        <p>index schools page</p>
+                        <h2>Index Schools Page</h2>
                         <p>list:</p>
                     </div>
 
